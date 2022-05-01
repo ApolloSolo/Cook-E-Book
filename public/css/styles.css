@@ -1,0 +1,27 @@
+/* DASHBOARD */
+.dash-contain{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 56px);
+}
+
+.dash-nav{
+    flex: 1 1 30%;
+    background-color: brown;
+    padding: 1rem;
+}
+
+.dash-main{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 70%;
+    padding: 1rem;
+}
+
+.img-fluid{
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  }
