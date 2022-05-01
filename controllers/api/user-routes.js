@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models/index");
+const { User, Recipe } = require("../../models/index");
 
 router.get("/", async (req, res) => {
   const users = await User.findAll({
@@ -16,6 +16,12 @@ router.get("/:id", async (req, res) => {
     where: {
       id: req.params.id,
     },
+    include: [
+      {
+        model: Recipe,
+        attributes: ["name", "description", "img_url", "video_url"],
+      },
+    ],
   });
   if (!userData) {
     res.status(404).json({ message: "No user found by that id" });
@@ -24,17 +30,30 @@ router.get("/:id", async (req, res) => {
   res.json(userData);
 });
 
+//Create user and cookbook
 router.post("/", async (req, res) => {
   const newUser = await User.create({
     username: req.body.username,
     password: req.body.password,
   });
+
+  const newRecipe = await Recipe.create({
+    name: "Welcome",
+    description: "Many recipes you can save",
+    img_url:
+      "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/372643.jpg",
+    video_url:
+      "https://s3.amazonaws.com/video-api-prod/assets/1cfb158df0e24b75b34d92d7d9caaad9/BFV89903_Lasagna101_JW_040722_V06_16x9_YT.mp4",
+    instructions: [{step1: "Get Food"}, {step2: "Heat it up"}],
+    user_id: 1,
+  });
+
   req.session.save(() => {
     (req.session.user_id = newUser.id),
       (req.session.username = newUser.username),
       (req.session.loggedIn = true);
 
-    res.json(newUser);
+    res.json([newUser, newRecipe]);
   });
 });
 
