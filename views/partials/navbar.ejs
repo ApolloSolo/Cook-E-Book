@@ -11,6 +11,17 @@
           <a class="nav-link" href="#">Recipies</a>
           <a class="nav-link" href="#">Discover</a>
           <% } %> 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Search
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Chicken</a></li>
+              <li><a class="dropdown-item" href="#">Beef</a></li>
+              <li><hr class="dropdown-item">Fish</li>
+              <li><a class="dropdown-item" href="#">Bake</a></li>
+            </ul>
+          </li>
         </div>
         <div class="navbar-nav ms-auto">
           <% if(!loggedIn) {%> 

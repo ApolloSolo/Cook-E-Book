@@ -1,14 +1,14 @@
 <% layout('layout/boilerplate') %>
-<div class="dash-contain">
+<div class="dash-contain mt-2">
     <h3 class="text-center">Hi <%= username %></h3>
     <div class="dash-main">
         <% for(let recipe of reducedRecipes) {%> 
-            <div class="card mb-3">
+            <div id="card" class="card mb-3">
                 <div class="row">
-                 <div class="col-md-4">
+                 <div class="col-md-4 col-lg-3">
                     <img class="img-fluid" alt="" src="<%=recipe.img%>">
                  </div>
-                 <div class="col-md-8">
+                 <div class="col-md-8 col-lg-9">
                      <div class="card-body">
                          <h5 class="card-title"><%= recipe.name %></h5>
                          <p class="card-text"><%= recipe.description %></p>
