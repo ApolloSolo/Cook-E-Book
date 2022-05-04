@@ -1,5 +1,6 @@
 const router = require("express").Router();
-const getRecipes = require("../../public/js/tasty");
+const { getRecipes } = require("../../public/js/tasty");
+const { v4: uuidv4 } = require("uuid");
 
 router.get("/", (req, res) => {
   res.render("homepages/homepage", { loggedIn: req.session.loggedIn });
@@ -11,6 +12,7 @@ router.get("/dashboard", async (req, res) => {
   for (let i = 0; i < recipeData.length; i++) {
     if (!recipeData[i].recipes) {
       let newRecipeObj = {
+        tast_id: recipeData[i].id,
         name: recipeData[i].name,
         description: recipeData[i].description,
         img:
@@ -22,7 +24,7 @@ router.get("/dashboard", async (req, res) => {
       reducedRecipes.push(newRecipeObj);
     }
   }
-  console.log(reducedRecipes);
+  //console.log(reducedRecipes);
 
   res.render("homepages/dashboard", {
     loggedIn: req.session.loggedIn,
@@ -38,6 +40,7 @@ router.get("/dashboard/:category", async (req, res) => {
   for (let i = 0; i < recipeData.length; i++) {
     if (!recipeData[i].recipes) {
       let newRecipeObj = {
+        tast_id: recipeData[i].id,
         name: recipeData[i].name,
         description: recipeData[i].description,
         img:

@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { User, Recipe } = require("../../models/index");
 
+//User saved recipe routes
+
 router.get("/", async (req, res) => {
   const recipies = await Recipe.findAll({
     where: {

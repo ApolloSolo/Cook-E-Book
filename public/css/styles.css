@@ -18,6 +18,13 @@
     margin: 0 auto;
 }
 
+.singleDisplayImg {
+    width:  250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
 /* Login */
 
 

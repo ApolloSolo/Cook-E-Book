@@ -1,0 +1,17 @@
+<% layout('layout/boilerplate') %>
+<div class="row">
+    <div class="col-6 offset-3">
+        <h1><%= recipe.name %> </h1>
+        <div>
+            <img class="singleDisplayImg" alt="" src="<%=recipe.img%>">
+        </div>
+        <div>
+            <ul>
+                <% for(let i = 0; i < recipe.instructions.length; i++) {%> 
+                <li><%= recipe.instructions[i].display_text %></li>
+                <% } %> 
+            </ul>
+        </div>
+    </div>
+
+</div>
