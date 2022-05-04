@@ -14,7 +14,7 @@ async function register(event) {
   });
 
   if (response.ok) {
-    document.location.replace("/user/home/dashboard");
+    document.location.replace("/user/dashboard");
   } else {
     console.log(response.statusText);
   }

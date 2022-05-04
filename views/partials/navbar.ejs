@@ -1,40 +1,45 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/user/home">Cook-E-Book</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="navbar-nav">
-          <% if(loggedIn) {%>
-          <a class="nav-link" href="/user/home/dashboard">Dash</a>
-          <a class="nav-link" href="#">Recipies</a>
-          <% } %> 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Discover
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/user/dashboard/chicken">Chicken</a></li>
-              <li><a class="dropdown-item" href="/user/dashboard/beef">Beef</a></li>
-              <li><a class="dropdown-item" href="/user/dashboard/fish">Fish</a></li>
-              <li><a class="dropdown-item" href="/user/dashboard/vegetarian">Vegetarian</a></li>
-              <li><a class="dropdown-item" href="/user/dashboard/dessert">Dessert</a></li>
-            </ul>
-          </li>
-        </div>
-        <div class="navbar-nav ms-auto">
-          <% if(!loggedIn) {%> 
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/user">Cook-E-Book</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav">
+        <% if(loggedIn) {%>
+          <a class="nav-link" href="/user/dashboard">Dash</a>
+          <a class="nav-link" href="#">Recipes</a>
+          
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Discover
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navba
+              rDropdown">
+                <li><a class="dropdown-item" href="/user/dashboard/chicken">Chicken</a></li>
+                <li><a class="dropdown-item" href="/user/dashboard/beef">Beef</a></li>
+                <li><a class="dropdown-item" href="/user/dashboard/fish">Fish</a></li>
+                <li><a class="dropdown-item" href="/user/dashboard/vegetarian">Vegetarian</a></li>
+                <li><a class="dropdown-item" href="/user/dashboard/dessert">Dessert</a></li>
+              </ul>
+            </div>
+          
+          <% } %>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <% if(!loggedIn) {%>
           <a class="nav-link" href="/user/login">Login</a>
           <a class="nav-link" href="/user/register">Register</a>
-          <% } else { %> 
-          <a class="nav-link" id="logout" href="#">Logout</a>
-          <% } %> 
-        </div>
+          <% } else { %>
+            <a class="nav-link" id="logout" href="#">Logout</a>
+            <% } %>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <% if(loggedIn) {%> 
-<script src="/js/logout.js"></script>
-<% } %> 
+<% if(loggedIn) {%>
+  <script src="/js/logout.js"></script>
+  <% } %>

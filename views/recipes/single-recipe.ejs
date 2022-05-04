@@ -1,0 +1,32 @@
+<% layout('layout/boilerplate') %>
+    <div class="row mt-2">
+        <div id="single-recipe" class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <h1 class="text-center">
+                    <%= recipe.name %>
+                </h1>
+                <img class="singleDisplayImg" alt="<%= recipe.name + " dish"%>" src="<%=recipe.img%>"/>
+            </div>
+            <div class="my-2">
+                <h5>Description</h5>
+                <% if(!recipe.description) {%> 
+                    <p class="card-text py-2">Sorry, it appears the author has left out a description. Shame :(</p>
+                    <% } else { %> 
+                       <p class="card-text py-2"><%= recipe.description %></p>
+                       <% } %> 
+            </div>
+            <div>
+                <h5>Instructions</h5>
+                <ul>
+                    <% for(let i=0; i < recipe.instructions.length; i++) {%>
+                        <li>
+                            <%= recipe.instructions[i].display_text %>
+                        </li>
+                        <% } %>
+                </ul>
+            </div>
+            <div>
+                <p>Check out the <a target="_blank" href="<%= recipe.video %>">Video</a></p>
+            </div>
+        </div>
+    </div>

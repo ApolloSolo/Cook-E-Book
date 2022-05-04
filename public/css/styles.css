@@ -1,3 +1,11 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Koulen', cursive;
+}
+
 /* DASHBOARD */
 #card{
     width: 100%;
@@ -18,8 +26,27 @@
     margin: 0 auto;
 }
 
+.singleDisplayImg {
+    width:  250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 0.25rem;
+    box-shadow: 4px 6px 6px -3px rgba(0,0,0,0.52);
+}
+
 /* Login */
 
+
+/* Single Recipe */
+
+#single-recipe {
+    border: solid rgba(0, 0, 0, .4) 1px;
+    padding: 1rem;
+    box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(245, 245, 245, 0.5);
+    border-radius: 0.25rem;
+}
 
 
 @media only screen and (max-width: 767px) {
