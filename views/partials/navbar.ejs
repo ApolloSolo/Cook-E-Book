@@ -9,17 +9,17 @@
           <% if(loggedIn) {%>
           <a class="nav-link" href="/user/home/dashboard">Dash</a>
           <a class="nav-link" href="#">Recipies</a>
-          <a class="nav-link" href="#">Discover</a>
           <% } %> 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Search
+              Discover
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Chicken</a></li>
-              <li><a class="dropdown-item" href="#">Beef</a></li>
-              <li><hr class="dropdown-item">Fish</li>
-              <li><a class="dropdown-item" href="#">Bake</a></li>
+              <li><a class="dropdown-item" href="/user/dashboard/chicken">Chicken</a></li>
+              <li><a class="dropdown-item" href="/user/dashboard/beef">Beef</a></li>
+              <li><a class="dropdown-item" href="/user/dashboard/fish">Fish</a></li>
+              <li><a class="dropdown-item" href="/user/dashboard/vegetarian">Vegetarian</a></li>
+              <li><a class="dropdown-item" href="/user/dashboard/dessert">Dessert</a></li>
             </ul>
           </li>
         </div>
