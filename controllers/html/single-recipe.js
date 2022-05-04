@@ -4,7 +4,7 @@ const { getRecipeById } = require("../../public/js/tasty");
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   const oneRecipe = await getRecipeById(id);
-
+  //console.log(oneRecipe);
   let reducedRecipe = {
     tast_id: oneRecipe.id,
     name: oneRecipe.name,
